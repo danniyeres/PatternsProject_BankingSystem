@@ -8,6 +8,26 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+
+
+/*
+    Singleton
+        Class:
+            Database
+        Purpose:
+            To ensure a single shared instance of the database is accessible throughout the application.
+        Implementation:
+            The Database class uses a private constructor and
+            a static method getInstance() to return the single instance.
+        Code Example:
+            Database database = Database.getInstance();
+            database.addUser("ID001", user);
+        Why Used:
+            Prevents the creation of multiple database instances,
+            centralizing state management for user accounts and transactions.
+
+ */
+
 public class Database {
     private static Database instance;
     private final Map<String, User> users = new HashMap<>();
@@ -50,10 +70,6 @@ public class Database {
         }else {
             return false;
         }
-    }
-
-    public List<User> getAllUsers() {
-        return new ArrayList<>(users.values());
     }
 
     public void addAccountToUser(String userId, Account account) {

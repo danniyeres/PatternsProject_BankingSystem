@@ -14,7 +14,21 @@ import org.example.pattern.command.TransferCommand;
 import org.example.pattern.observer.TransactionNotify;
 import java.util.Stack;
 
-
+/*
+    Facade
+        Class:
+            BankingSystemFacade
+        Purpose:
+            To provide a unified interface for interacting with subsystems like Database, Account, and Transaction.
+        Implementation:
+            The BankingSystemFacade encapsulates the complexity of individual subsystems, offering simplified methods such as deposit, withdraw, and transfer.
+        Code Example:
+            facade.deposit(currentUser, "ACC001", 500);
+            facade.viewAccountDetails(currentUser);
+        Why Used:
+            Simplifies the user interface for interacting with the banking system,
+            reducing the coupling between modules.
+ */
 
 public class BankingSystemFacade {
     private final Database database = Database.getInstance();
