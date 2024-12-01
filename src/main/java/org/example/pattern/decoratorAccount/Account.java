@@ -29,7 +29,7 @@ public class Account implements AccountInterface {
             System.out.println("Not enough funds for withdrawal.");
         } else {
             balance -= amount;
-            System.out.println("Withdraw: " + amount + ". Balnce: " + balance);
+            System.out.println("Withdraw: " + amount + ". Balance: " + balance);
         }
     }
 

@@ -4,12 +4,12 @@ import java.time.LocalDateTime;
 import java.util.Stack;
 
 public class Transaction {
-    private String transactionId;
-    private String fromAccount;
-    private String toAccount;
-    private double amount;
-    private LocalDateTime timestamp;
-    private String type;
+    private final String transactionId;
+    private final String fromAccount;
+    private final String toAccount;
+    private final double amount;
+    private final LocalDateTime timestamp;
+    private final String type;
 
     public Transaction(TransactionBuilder builder) {
         this.transactionId = builder.transactionId;
@@ -32,7 +32,7 @@ public class Transaction {
         }
         transactionStack.push("Amount: " + getAmount());
         transactionStack.push("Date: " + getTimestamp());
-        transactionStack.push("----------------------------------------");
+        transactionStack.push("------------");
         return transactionStack;
     }
 
