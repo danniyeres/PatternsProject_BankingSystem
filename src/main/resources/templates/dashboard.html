@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="/css/sta.css">
+</head>
+<body>
+<div class="dashboard">
+    <h3>Welcome, <span th:text="${user.name}"></span>!</h3>
+
+    <h4>Your Accounts:</h4>
+    <ul class="account-list">
+        <li th:each="account : ${user.accounts}">
+            <p>Account ID: <span th:text="${account.accountId}"></span></p>
+            <p>Balance: <span th:text="${account.balance}"></span></p>
+        </li>
+    </ul>
+
+    <!-- Кнопки для действий -->
+    <h4>Choose an action:</h4>
+    <div class="action-buttons">
+        <form action="/bank/create-account" method="get">
+            <button type="submit">Create a Bank Account</button>
+        </form>
+
+        <form action="/bank/deposit" method="get">
+            <button type="submit">Deposit</button>
+        </form>
+
+        <form action="/bank/withdraw" method="get">
+            <button type="submit">Withdrawal</button>
+        </form>
+
+        <form action="/bank/transfer" method="get">
+            <button type="submit">Transfer Funds</button>
+        </form>
+
+        <form action="/bank/transaction-history" method="get">
+            <button type="submit">Transaction History</button>
+        </form>
+
+        <form action="/bank/logout" method="get">
+            <button type="submit">Logout</button>
+        </form>
+    </div>
+
+</div>
+</body>
+</html>

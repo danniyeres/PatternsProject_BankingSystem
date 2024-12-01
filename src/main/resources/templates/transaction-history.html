@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Transaction History</title>
+    <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+<h2>Transaction History</h2>
+
+<div th:if="${user.transactions.isEmpty()}">
+    <p>No transactions found.</p>
+</div>
+
+<ul th:if="${not #lists.isEmpty(user.transactions)}">
+    <li th:each="transaction : ${user.transactions}">
+        <p>
+            <span th:text="${transaction.transactionId}"></span> -
+            <span th:text="${transaction.amount}"></span> -
+            <span th:text="${transaction.timestamp}"></span>
+        </p>
+    </li>
+</ul>
+
+<a href="/bank/">Back to Dashboard</a>
+</body>
+</html>
